@@ -2,7 +2,7 @@
 
 set -e
 
-EXCLUDES="rean-master rbd"
+EXCLUDES="example1 example2"
 
 for CREDENTIAL in $(aws-vault list | awk {'print $2}' | sed '1,2d' | sort | uniq | grep -v "^-" | grep -v "==========="); do
     for EXCLUDE in $EXCLUDES; do
